@@ -1,0 +1,16 @@
+<!-- register.component.html -->
+<div class="container">
+    <h2>تسجيل مستخدم جديد</h2>
+    <form (submit)="registerUser()" #registerForm="ngForm">
+        <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input type="email" class="form-control" id="email" required [(ngModel)]="user.email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="password">كلمة المرور</label>
+            <input type="password" class="form-control" id="password" required [(ngModel)]="user.password"
+                name="password">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">تسجيل</button>
+    </form>
+</div>
